@@ -1,0 +1,250 @@
+https://blog.csdn.net/qq_38111015/article/details/84885809
+
+一、 Git 常用命令速查
+git branch 查看本地所有分支
+git status 查看当前状态
+git commit 提交
+git branch -a 查看所有的分支
+git branch -r 查看远程所有分支
+git commit -am "init" 提交并且加注释
+git remote add origin git@192.168.1.119:ndshow
+git push origin master 将文件给推到服务器上
+git remote show origin 显示远程库origin里的资源
+git push origin master:develop
+git push origin master:hb-dev 将本地库与服务器上的库进行关联
+git checkout --track origin/dev 切换到远程dev分支
+git branch -D master develop 删除本地库develop
+git checkout -b dev 建立一个新的本地分支dev
+git merge origin/dev 将分支dev与当前分支进行合并
+git checkout dev 切换到本地dev分支
+git remote show 查看远程库
+git add .
+git rm 文件名(包括路径) 从git中删除指定文件
+git clone git://github.com/schacon/grit.git 从服务器上将代码给拉下来
+git config --list 看所有用户
+git ls-files 看已经被提交的
+git rm [file name] 删除一个文件
+git commit -a 提交当前repos的所有的改变
+git add [file name] 添加一个文件到git index
+git commit -v 当你用－v参数的时候可以看commit的差异
+git commit -m "This is the message describing the commit" 添加commit信息
+git commit -a -a是代表add，把所有的change加到git index里然后再commit
+git commit -a -v 一般提交命令
+git log 看你commit的日志
+git diff 查看尚未暂存的更新
+git rm a.a 移除文件(从暂存区和工作区中删除)
+git rm --cached a.a 移除文件(只从暂存区中删除)
+git commit -m "remove" 移除文件(从Git中删除)
+git rm -f a.a 强行移除修改后文件(从暂存区和工作区中删除)
+git diff --cached 或 $ git diff --staged 查看尚未提交的更新
+git stash push 将文件给push到一个临时空间中
+git stash pop 将文件从临时空间pop下来
+---------------------------------------------------------
+git remote add origin git@github.com:username/Hello-World.git
+git push origin master 将本地项目给提交到服务器中
+-----------------------------------------------------------
+git pull 本地与服务器端同步
+-----------------------------------------------------------------
+git push (远程仓库名) (分支名) 将本地分支推送到服务器上去。
+git push origin serverfix:awesomebranch
+------------------------------------------------------------------
+git fetch 相当于是从远程获取最新版本到本地，不会自动merge
+git commit -a -m "log_message" (-a是提交所有改动，-m是加入log信息) 本地修改同步至服务器端 ：
+git branch branch_0.1 master 从主分支master创建branch_0.1分支
+git branch -m branch_0.1 branch_1.0 将branch_0.1重命名为branch_1.0
+git checkout branch_1.0/master 切换到branch_1.0/master分支
+du -hs
+git branch 删除远程branch
+git push origin :branch_remote_name
+git branch -r -d branch_remote_name
+-----------------------------------------------------------
+初始化版本库，并提交到远程服务器端
+mkdir WebApp
+cd WebApp
+git init 本地初始化
+touch README
+git add README 添加文件
+git commit -m 'first commit'
+git remote add origin git@github.com:daixu/WebApp.git
+增加一个远程服务器端
+上面的命令会增加URL地址为'git@github.com:daixu/WebApp.git'，名称为origin的远程服务器库，以后提交代码的时候只需要使用 origin别名即可
+二、 Git 命令速查表
+1、常用的Git命令
+命令简要说明
+git add添加至暂存区
+git add–interactive交互式添加
+git apply应用补丁
+git am应用邮件格式补丁
+git annotate同义词，等同于 git blame
+git archive文件归档打包
+git bisect二分查找
+git blame文件逐行追溯
+git branch分支管理
+git cat-file版本库对象研究工具
+git checkout检出到工作区、切换或创建分支
+git cherry-pick提交拣选
+git citool图形化提交，相当于 git gui 命令
+git clean清除工作区未跟踪文件
+git clone克隆版本库
+git commit提交
+git config查询和修改配置
+git describe通过里程碑直观地显示提交ID
+git diff差异比较
+git difftool调用图形化差异比较工具
+git fetch获取远程版本库的提交
+git format-patch创建邮件格式的补丁文件。参见 git am 命令
+git grep文件内容搜索定位工具
+git gui基于Tcl/Tk的图形化工具，侧重提交等操作
+git help帮助
+git init版本库初始化
+git init-db*同义词，等同于 git init
+git log显示提交日志
+git merge分支合并
+git mergetool图形化冲突解决
+git mv重命名
+git pull拉回远程版本库的提交
+git push推送至远程版本库
+git rebase分支变基
+git rebase–interactive交互式分支变基
+git reflog分支等引用变更记录管理
+git remote远程版本库管理
+git repo-config*同义词，等同于 git config
+git reset重置改变分支“游标”指向
+git rev-parse将各种引用表示法转换为哈希值等
+git revert反转提交
+git rm删除文件
+git show显示各种类型的对象
+git stage*同义词，等同于 git add
+git stash保存和恢复进度
+git status显示工作区文件状态
+git tag里程碑管理
+2、对象库操作相关命令
+命令简要说明
+git commit-tree从树对象创建提交
+git hash-object从标准输入或文件计算哈希值或创建对象
+git ls-files显示工作区和暂存区文件
+git ls-tree显示树对象包含的文件
+git mktag读取标准输入创建一个里程碑对象
+git mktree读取标准输入创建一个树对象
+git read-tree读取树对象到暂存区
+git update-index工作区内容注册到暂存区及暂存区管理
+git unpack-file创建临时文件包含指定 blob 的内容
+git write-tree从暂存区创建一个树对象
+3、引用操作相关命令
+命令简要说明
+git check-ref-format检查引用名称是否符合规范
+git for-each-ref引用迭代器，用于shell编程
+git ls-remote显示远程版本库的引用
+git name-rev将提交ID显示为友好名称
+git peek-remote*过时命令，请使用 git ls-remote
+git rev-list显示版本范围
+git show-branch显示分支列表及拓扑关系
+git show-ref显示本地引用
+git symbolic-ref显示或者设置符号引用
+git update-ref更新引用的指向
+git verify-tag校验 GPG 签名的Tag
+4、版本库管理相关命令
+命令简要说明
+git count-objects显示松散对象的数量和磁盘占用
+git filter-branch版本库重构
+git fsck对象库完整性检查
+git fsck-objects*同义词，等同于 git fsck
+git gc版本库存储优化
+git index-pack从打包文件创建对应的索引文件
+git lost-found*过时，请使用 git fsck –lost-found 命令
+git pack-objects从标准输入读入对象ID，打包到文件
+git pack-redundant查找多余的 pack 文件
+git pack-refs将引用打包到 .git/packed-refs 文件中
+git prune从对象库删除过期对象
+git prune-packed将已经打包的松散对象删除
+git relink为本地版本库中相同的对象建立硬连接
+git repack将版本库未打包的松散对象打包
+git show-index读取包的索引文件，显示打包文件中的内容
+git unpack-objects从打包文件释放文件
+git verify-pack校验对象库打包文件
+5、数据传输相关命令
+命令简要说明
+git fetch-pack执行 git fetch 或 git pull 命令时在本地执行此命令，用于从其他版本库获取缺失的对象
+git receive-pack执行 git push 命令时在远程执行的命令，用于接受推送的数据
+git send-pack执行 git push 命令时在本地执行的命令，用于向其他版本库推送数据
+git upload-archive执行 git archive –remote 命令基于远程版本库创建归档时，远程版本库执行此命令传送归档
+git upload-pack执行 git fetch 或 git pull 命令时在远程执行此命令，将对象打包、上传
+6、邮件相关命令
+命令简要说明
+git imap-send将补丁通过 IMAP 发送
+git mailinfo从邮件导出提交说明和补丁
+git mailsplit将 mbox 或 Maildir 格式邮箱中邮件逐一提取为文件
+git request-pull创建包含提交间差异和执行PULL操作地址的信息
+git send-email发送邮件
+7、协议相关命令
+命令简要说明
+git daemon实现Git协议
+git http-backend实现HTTP协议的CGI程序，支持智能HTTP协议
+git instaweb即时启动浏览器通过 gitweb 浏览当前版本库
+git shell受限制的shell，提供仅执行Git命令的SSH访问
+git update-server-info更新哑协议需要的辅助文件
+git http-fetch通过HTTP协议获取版本库
+git http-push通过HTTP/DAV协议推送
+git remote-ext由Git命令调用，通过外部命令提供扩展协议支持
+git remote-fd由Git命令调用，使用文件描述符作为协议接口
+git remote-ftp由Git命令调用，提供对FTP协议的支持
+git remote-ftps由Git命令调用，提供对FTPS协议的支持
+git remote-http由Git命令调用，提供对HTTP协议的支持
+git remote-https由Git命令调用，提供对HTTPS协议的支持
+git remote-testgit协议扩展示例脚本
+8、版本库转换和交互相关命令
+命令简要说明
+git archimport导入Arch版本库到Git
+git bundle提交打包和解包，以便在不同版本库间传递
+git cvsexportcommit将Git的一个提交作为一个CVS检出
+git cvsimport导入CVS版本库到Git。或者使用 cvs2git
+git cvsserverGit的CVS协议模拟器，可供CVS命令访问Git版本库
+git fast-export将提交导出为 git-fast-import 格式
+git fast-import其他版本库迁移至Git的通用工具
+git svnGit 作为前端操作 Subversion
+9、合并相关的辅助命令
+命令简要说明
+git merge-base供其他脚本调用，找到两个或多个提交最近的共同祖先
+git merge-file针对文件的两个不同版本执行三向文件合并
+git merge-index对index中的冲突文件调用指定的冲突解决工具
+git merge-octopus合并两个以上分支。参见 git merge 的octopus合并策略
+git merge-one-file由 git merge-index 调用的标准辅助程序
+git merge-ours合并使用本地版本，抛弃他人版本。参见 git merge 的ours合并策略
+git merge-recursive针对两个分支的三向合并。参见 git merge 的recursive合并策略
+git merge-resolve针对两个分支的三向合并。参见 git merge 的resolve合并策略
+git merge-subtree子树合并。参见 git merge 的 subtree 合并策略
+git merge-tree显式三向合并结果，不改变暂存区
+git fmt-merge-msg供执行合并操作的脚本调用，用于创建一个合并提交说明
+git rerere重用所记录的冲突解决方案
+10、 杂项
+命令简要说明
+git bisect–helper由 git bisect 命令调用，确认二分查找进度
+git check-attr显示某个文件是否设置了某个属性
+git checkout-index从暂存区拷贝文件至工作区
+git cherry查找没有合并到上游的提交
+git diff-files比较暂存区和工作区，相当于 git diff –raw
+git diff-index比较暂存区和版本库，相当于 git diff –cached –raw
+git diff-tree比较两个树对象，相当于 git diff –raw A B
+git difftool–helper由 git difftool 命令调用，默认要使用的差异比较工具
+git get-tar-commit-id从 git archive 创建的 tar 包中提取提交ID
+git gui–askpass命令 git gui 的获取用户口令输入界面
+git notes提交评论管理
+git patch-id补丁过滤行号和空白字符后生成补丁唯一ID
+git quiltimport将Quilt补丁列表应用到当前分支
+git replace提交替换
+git shortlog对 git log 的汇总输出，适合于产品发布说明
+git stripspace删除空行，供其他脚本调用
+git submodule子模组管理
+git tar-tree过时命令，请使用 git archive
+git var显示 Git 环境变量
+git web–browse启动浏览器以查看目录或文件
+git whatchanged显示提交历史及每次提交的改动
+git-mergetool–lib包含于其他脚本中，提供合并/差异比较工具的选择和执行
+git-parse-remote包含于其他脚本中，提供操作远程版本库的函数
+git-sh-setup包含于其他脚本中，提供 shell 编程的函数库
+
+
+作者：LOVE_晴天
+链接：https://www.jianshu.com/p/31fa525d0853
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
