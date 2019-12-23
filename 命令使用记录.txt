@@ -1,0 +1,13 @@
+
+git clone <url>		//克隆到本地仓库
+git add 文件名		//将该文件添加到暂存区
+git add .		//将当前目录下所有文件添加到暂存区
+git commit -m ""	//提交到工作区，并添加注释说明
+git push		//将本地仓库推到github线上仓库
+git pull		//将github线上仓库拉到本地仓库
+
+
+cd ..			//返回上级目录
+cd 文件夹		//进入该文件夹
+ls			//浏览当前目录下所有文件
+
